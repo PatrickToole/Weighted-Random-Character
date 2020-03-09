@@ -1,0 +1,32 @@
+WindowManager:
+    MainWindow:
+
+<MainWindow>:
+    name:'main'
+    player_python:player_kv
+
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols:2
+
+            Label:
+                text:'Player:'
+
+            TextInput:
+                id: player_kv
+                multiline: False
+
+        Button:
+            text: 'Random'
+            on_press: root.btn()
+
+
+<P>:
+    output:output
+
+    FloatLayout:
+        Label:
+            id: output
+
