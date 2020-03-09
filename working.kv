@@ -3,20 +3,19 @@ WindowManager:
 
 <MainWindow>:
     name:'main'
-    player_python:player_kv
+    player_python:spinner_id
 
     GridLayout:
         cols:1
 
         GridLayout:
-            cols:2
+            cols:1
 
-            Label:
-                text:'Player:'
-
-            TextInput:
-                id: player_kv
-                multiline: False
+            Spinner:
+                text: 'Player'
+                values: ['Brad', 'Patrick', 'Joey', 'Simon']
+                id: spinner_id
+                on_text: root.spinner_clicked(spinner_id.text)
 
         Button:
             text: 'Random'
@@ -29,4 +28,3 @@ WindowManager:
     FloatLayout:
         Label:
             id: output
-

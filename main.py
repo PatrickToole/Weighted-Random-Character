@@ -12,7 +12,10 @@ from kivy.properties import StringProperty, ObjectProperty
 class MainWindow(Screen):
     player_python = ObjectProperty(None)
     output = StringProperty('')
-
+    ##
+    def spinner_clicked(self, value):
+        return
+    ###
     def btn(self):
 
         player = self.player_python.text
@@ -21,7 +24,7 @@ class MainWindow(Screen):
 
         self.output = random.choice(weighted_list)
 
-        self.player_python.text = ''
+        self.player_python.text = 'Player'
 
         self.show_popup()
 
@@ -40,13 +43,13 @@ class WindowManager(ScreenManager):
     pass
 
 
-kv = Builder.load_file('four.kv')
+kv = Builder.load_file('working.kv')
 
 
-class WorkingApp(App):
+class RandomCharacterApp(App):
     def build(self):
         return kv
 
 
 if __name__ == '__main__':
-    WorkingApp().run()
+    RandomCharacterApp().run()
